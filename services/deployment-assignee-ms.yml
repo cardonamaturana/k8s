@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignee-ms
+spec:
+  selector:
+    matchLabels:
+      app: assignee-ms
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: assignee-ms
+    spec:
+      containers:
+        - name: assignee-ms
+          image: cardonadeveloperzabud/assignee-ms:v1
+          ports:
+            - containerPort: 8081
