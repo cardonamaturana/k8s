@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asset-ms
+spec:
+  selector:
+    matchLabels:
+      app: asset-ms
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: asset-ms
+    spec:
+      containers:
+        - name: asset-ms
+          image: cardonadeveloperzabud/asset-ms:v1
+          ports:
+            - containerPort: 8080
