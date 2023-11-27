@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-mongo-asset
+spec:
+  selector:
+    matchLabels:
+      app: mongo-asset
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongo-asset
+    spec:
+      containers:
+        - name: mongo-asset
+          image: mongo
+          ports:
+            - containerPort: 27017
