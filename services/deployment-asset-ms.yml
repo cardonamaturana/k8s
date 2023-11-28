@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: asset-ms
+  name: deployment-asset-ms
 spec:
   selector:
     matchLabels:
@@ -14,6 +14,25 @@ spec:
     spec:
       containers:
         - name: asset-ms
-          image: cardonadeveloperzabud/asset-ms:v1
+          image: juliocardona/asset-ms
           ports:
             - containerPort: 8080
+          env:
+            - name: ASSET_MONGO_USERNAME
+              value: "admin"
+            - name: ASSET_MONGO_PASSWORD
+              value: "root123"
+            - name: ASSET_MONGO_HOST
+              value: "service-mongo-asset"
+            - name: ASSET_MONGO_PORT
+              value: "27017"
+            - name: ASSIGNEE_HOST
+              value: "assignee-ms"
+            - name: ASSIGNEE_PORT
+              value: "8080"
+            - name: ASSET_MONGO_DB
+              value: "asset-develop"
+            - name: REDIS_HOST
+              value: "service-redis"
+            - name: REDIS_PORT
+              value: "6379"

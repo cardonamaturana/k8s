@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: assignee-ms
+  name: deployment-assignee-ms
 spec:
   selector:
     matchLabels:
@@ -14,6 +14,21 @@ spec:
     spec:
       containers:
         - name: assignee-ms
-          image: cardonadeveloperzabud/assignee-ms:v1
+          image: juliocardona/assignee-ms
           ports:
             - containerPort: 8081
+          env:
+            - name: ASSIGNEE_MONGO_USERNAME
+              value: "admin"
+            - name: ASSIGNEE_MONGO_PASSWORD
+              value: "root123"
+            - name: ASSIGNEE_MONGO_HOST
+              value: "service-mongo-assignee"
+            - name: ASSIGNEE_MONGO_PORT
+              value: "27017"
+            - name: ASSIGNEE_MONGO_DB
+              value: "assignee-develop"
+            - name: REDIS_HOST
+              value: "service-redis"
+            - name: REDIS_PORT
+              value: "6379"

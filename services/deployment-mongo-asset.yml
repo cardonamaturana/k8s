@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-asset
+  name: deployment-mongo-asset
 spec:
   selector:
     matchLabels:

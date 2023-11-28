@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-mongo-asset
+  name: service-mongo-assignee
 spec:
   selector:
-    app: mongo-asset
+    app: mongo-assignee
   ports:
     - protocol: TCP
       port: 27017
