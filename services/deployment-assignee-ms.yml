@@ -27,7 +27,7 @@ spec:
             - name: ASSIGNEE_MONGO_PORT
               value: "27017"
             - name: ASSIGNEE_MONGO_DB
-              value: "assignee-develop"
+              value: "assigneedevelop"
             - name: REDIS_HOST
               value: "service-redis"
             - name: REDIS_PORT

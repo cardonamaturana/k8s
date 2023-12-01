@@ -31,7 +31,7 @@ spec:
             - name: ASSIGNEE_PORT
               value: "8080"
             - name: ASSET_MONGO_DB
-              value: "asset-develop"
+              value: "assetdevelop"
             - name: REDIS_HOST
               value: "service-redis"
             - name: REDIS_PORT
